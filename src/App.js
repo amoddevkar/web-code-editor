@@ -26,7 +26,7 @@ function App() {
     <div style={{display:"flex",flexDirection:"column"}}>
       <div className="pane top-pane">
         <Editor
-          language="xml"
+          language="html"
           displayName="HTML"
           value={html}
           onChange={setHtml}

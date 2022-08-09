@@ -7,7 +7,7 @@ body {
 }
 
 .pane {
- height: 50vh;
+  height: 50vh;
   display: flex;
 }
 @media screen and (max-width: 480px) {
@@ -27,8 +27,6 @@ body {
   min-width: 32vw;
 }
 
-
-
 .editor-title {
   display: flex;
   justify-content: space-between;
@@ -39,21 +37,11 @@ body {
   border-top-left-radius: 0.5rem;
 }
 
-.editor-container.collapsed .CodeMirror-scroll {
-  position: absolute;
-  overflow: hidden !important;
+.ace-editor {
+  min-height: 280px;
+  height: 280px;
 }
 
-.CodeMirror {
-  height: 100% !important;
-}
-
-.code-mirror-wrapper {
-  flex-grow: 1;
-  border-bottom-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-  overflow: hidden;
-}
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */

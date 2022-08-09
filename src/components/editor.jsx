@@ -1,11 +1,10 @@
 import React from "react";
-import "codemirror/lib/codemirror.css";
-import "codemirror/theme/material.css";
-import "codemirror/mode/xml/xml";
-import "codemirror/mode/javascript/javascript";
-import "codemirror/mode/css/css";
-import { Controlled as ControlledEditor } from "react-codemirror2";
-
+import AceEditor from "react-ace";
+import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/mode-html";
+import "ace-builds/src-noconflict/mode-css";
+import "ace-builds/src-noconflict/theme-terminal";
+import "ace-builds/src-noconflict/ext-language_tools";
 export default function Editor(props) {
   const { language, displayName, value, onChange } = props;
 
@@ -16,18 +15,16 @@ export default function Editor(props) {
   return (
     <div className="editor-container">
       <div className="editor-title">{displayName}</div>
-      <ControlledEditor
-        onBeforeChange={handleChange}
-        value={value}
-        className="code-mirror-wrapper"
-        options={{
-          lineWrapping: true,
-          lint: true,
-          mode: language,
-          theme: "material",
-          lineNumbers: true,
-        }}
-      />
+      <div className="ace-editor">
+        <AceEditor
+          height={"inherit"}
+          width={"inherit"}
+          mode={language}
+          value={value}
+          theme="terminal"
+          onChange={handleChange}
+        />
+      </div>
     </div>
   );
 }
